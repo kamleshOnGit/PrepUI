@@ -1,0 +1,7 @@
+.wrapper { display: flex; flex-direction: column; gap: 0.25rem; }
+.row { display: flex; align-items: flex-start; gap: 0.6rem; }
+.input { width: 1.1rem; height: 1.1rem; border-radius: 0.25rem; accent-color: #6366f1; cursor: pointer; flex-shrink: 0; margin-top: 0.1rem; }
+.labelWrap { display: flex; flex-direction: column; gap: 0.1rem; }
+.label { font-size: 0.9rem; font-weight: 500; color: #1e293b; cursor: pointer; }
+.description { font-size: 0.8rem; color: #6b7280; }
+.error { font-size: 0.8rem; color: #dc2626; margin: 0; }

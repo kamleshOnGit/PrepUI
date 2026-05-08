@@ -1,0 +1,64 @@
+{
+  "name": "@prepui/components",
+  "version": "0.1.0",
+  "description": "A React 19 UI component library for building dashboards",
+  "keywords": ["react", "ui", "components", "dashboard", "design-system"],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/prepui.cjs",
+  "module": "./dist/prepui.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/prepui.mjs",
+      "require": "./dist/prepui.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.lib.json && vite build",
+    "build:types": "tsc -p tsconfig.lib.json",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build -o storybook-static",
+    "test": "vitest --project=storybook"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.12.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^10.2.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.5.0",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.58.2",
+    "vite": "^8.0.10",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "storybook": "^10.3.6",
+    "@storybook/react-vite": "^10.3.6",
+    "@chromatic-com/storybook": "^5.1.2",
+    "@storybook/addon-vitest": "^10.3.6",
+    "@storybook/addon-a11y": "^10.3.6",
+    "@storybook/addon-docs": "^10.3.6",
+    "@storybook/addon-onboarding": "^10.3.6",
+    "eslint-plugin-storybook": "^10.3.6",
+    "vitest": "^4.1.5",
+    "playwright": "^1.59.1",
+    "@vitest/browser-playwright": "^4.1.5",
+    "@vitest/coverage-v8": "^4.1.5"
+  }
+}

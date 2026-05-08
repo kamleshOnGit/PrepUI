@@ -1,0 +1,12 @@
+.wrapper { position: relative; display: inline-flex; align-items: center; }
+.tooltip { position: absolute; z-index: 9999; background: #1e293b; color: #fff; font-size: 0.78rem; padding: 0.35rem 0.65rem; border-radius: 0.35rem; pointer-events: none; animation: fadeIn 0.12s ease; max-width: 240px; white-space: normal; word-break: break-word; text-align: center; }
+@keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+.top { bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); }
+.bottom { top: calc(100% + 8px); left: 50%; transform: translateX(-50%); }
+.left { right: calc(100% + 8px); top: 50%; transform: translateY(-50%); }
+.right { left: calc(100% + 8px); top: 50%; transform: translateY(-50%); }
+.arrow { position: absolute; width: 0; height: 0; border: 5px solid transparent; }
+.top .arrow { top: 100%; left: 50%; transform: translateX(-50%); border-top-color: #1e293b; }
+.bottom .arrow { bottom: 100%; left: 50%; transform: translateX(-50%); border-bottom-color: #1e293b; }
+.left .arrow { left: 100%; top: 50%; transform: translateY(-50%); border-left-color: #1e293b; }
+.right .arrow { right: 100%; top: 50%; transform: translateY(-50%); border-right-color: #1e293b; }
