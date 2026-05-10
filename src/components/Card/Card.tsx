@@ -8,18 +8,18 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   hoverable?: boolean;
   bordered?: boolean;
 }
-export interface CardHeaderProps { children: React.ReactNode; className?: string; }
-export interface CardBodyProps { children: React.ReactNode; className?: string; }
-export interface CardFooterProps { children: React.ReactNode; className?: string; }
+export interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> { children: React.ReactNode; }
+export interface CardBodyProps extends React.HTMLAttributes<HTMLDivElement> { children: React.ReactNode; }
+export interface CardFooterProps extends React.HTMLAttributes<HTMLDivElement> { children: React.ReactNode; }
 
-function CardHeader({ children, className }: CardHeaderProps) {
-  return <div className={[styles.header, className ?? ''].filter(Boolean).join(' ')}>{children}</div>;
+function CardHeader({ children, className, ...rest }: CardHeaderProps) {
+  return <div className={[styles.header, className ?? ''].filter(Boolean).join(' ')} {...rest}>{children}</div>;
 }
-function CardBody({ children, className }: CardBodyProps) {
-  return <div className={[styles.body, className ?? ''].filter(Boolean).join(' ')}>{children}</div>;
+function CardBody({ children, className, ...rest }: CardBodyProps) {
+  return <div className={[styles.body, className ?? ''].filter(Boolean).join(' ')} {...rest}>{children}</div>;
 }
-function CardFooter({ children, className }: CardFooterProps) {
-  return <div className={[styles.footer, className ?? ''].filter(Boolean).join(' ')}>{children}</div>;
+function CardFooter({ children, className, ...rest }: CardFooterProps) {
+  return <div className={[styles.footer, className ?? ''].filter(Boolean).join(' ')} {...rest}>{children}</div>;
 }
 
 function Card({ children, className, padding = 'md', hoverable = false, bordered = true, ...rest }: CardProps) {

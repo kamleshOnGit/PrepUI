@@ -66,3 +66,22 @@ export type { StatCardProps, StatCardTrend } from './components/StatCard';
 
 export { default as DataTable } from './components/DataTable';
 export type { DataTableProps, Column, SortDirection } from './components/DataTable';
+
+// ── AI Components ─────────────────────────────────────────────────────────────
+export { default as ChatPanel } from './components/ChatPanel';
+export type { ChatPanelProps, ChatMessage, ChatRole } from './components/ChatPanel';
+
+export { default as PromptInput } from './components/PromptInput';
+export type { PromptInputProps } from './components/PromptInput';
+
+export { default as StreamingResponse } from './components/StreamingResponse';
+export type { StreamingResponseProps, StreamingStatus } from './components/StreamingResponse';
+
+export { default as CitationCard } from './components/CitationCard';
+export type { CitationCardProps, CitationVariant } from './components/CitationCard';
+
+export { default as ResultsComparison } from './components/ResultsComparison';
+export type { ResultsComparisonProps, ComparisonResult, ComparisonLayout } from './components/ResultsComparison';
+
+export { default as FeedbackWidget } from './components/FeedbackWidget';
+export type { FeedbackWidgetProps, FeedbackValue } from './components/FeedbackWidget';
