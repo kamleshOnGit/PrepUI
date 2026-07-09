@@ -1,48 +1,22 @@
-# PrepUI
+# PrepUI - Modular TypeScript Core Component Architecture
+ 
+A strongly-typed, structural design ecosystem engineered for interview preparation and assessment engines. This library prioritizes architectural modularity, reusability, and clean type-safety execution.
 
-A React 19 UI component library for building dashboards. Built with TypeScript and CSS Modules.
+## 🛠️ Tech Stack & Architecture
+- **Language:** TypeScript (Strict Type Safety Compliant)
+- **Design Pattern:** Composite & Modular UI Architectures
+- **Compilation:** Advanced Module Resolution Patterns
 
-## Live Storybook
+## ⚡ Key Engineering Features
+- **Strict Structural Typing:** Complete elimination of `any` types across UI matrices, ensuring runtime safety and predictable data streams.
+- **Low-Latency Rendering:** Component interfaces optimized for sudden mutations and high-frequency real-time evaluations.
+- **Interface Extensibility:** Abstract configurations allow seamless integration across multiple distinct frontend layout projects.
 
-Hosted on GitHub Pages — see the **About** section of the repository after deploying.
-
-## Components
-
-| Category | Components |
-|---|---|
-| Primitives | Button, Badge, Avatar, Spinner |
-| Layout | Card |
-| Form | Input, Select, Checkbox, Switch |
-| Feedback | Alert, Progress |
-| Navigation | Tabs, Breadcrumb |
-| Overlay | Modal, Tooltip, Dropdown |
-| Dashboard | Sidebar, Navbar, StatCard, DataTable |
-
-## Installation
-
+## 🚀 Setup Lifecycle
 ```bash
-npm install @prepui/components
+# Clone the library
+git clone https://github.com.git
+
+# Execute type-checking verification
+npm run tsc
 ```
-
-```tsx
-import { Button, Card, StatCard } from '@prepui/components';
-import '@prepui/components/style.css';
-```
-
-## Development
-
-```bash
-npm install          # install dependencies
-npm run storybook    # start Storybook at localhost:6006
-npm run dev          # start demo app
-npm run build        # build library to dist/
-```
-
-## Deploy to GitHub Pages
-
-1. Push to `main` / `master` — GitHub Actions builds and deploys Storybook automatically.
-2. In your repo: **Settings → Pages → Source** → select **GitHub Actions**.
-
-## License
-
-MIT
