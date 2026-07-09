@@ -1,6 +1,6 @@
 # PrepUI - Modular TypeScript Core Component Architecture
  
-A strongly-typed, structural design ecosystem engineered for interview preparation and assessment engines. This library prioritizes architectural modularity, reusability, and clean type-safety execution.
+A strongly-typed, structural design ecosystem. This library prioritizes architectural modularity, reusability, and clean type-safety execution.
 
 ## 🛠️ Tech Stack & Architecture
 - **Language:** TypeScript (Strict Type Safety Compliant)
