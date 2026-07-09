@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import Breadcrumb from './Breadcrumb';
 
 const meta = { title: 'Components/Breadcrumb', component: Breadcrumb, parameters: { layout: 'centered' }, tags: ['autodocs'] } satisfies Meta<typeof Breadcrumb>;

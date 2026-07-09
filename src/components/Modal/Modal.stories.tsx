@@ -1,4 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { expect, userEvent, within } from 'storybook/test';
 import React from 'react';
 import Modal from './Modal';
 
@@ -25,5 +26,13 @@ export const Default: Story = {
         </Modal>
       </>
     );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByRole('button', { name: 'Open Modal' }));
+    await expect(canvas.getByRole('dialog')).toBeInTheDocument();
+    await expect(canvas.getByText('Modal Title')).toBeInTheDocument();
+    await userEvent.keyboard('{Escape}');
+    await expect(canvas.queryByRole('dialog')).not.toBeInTheDocument();
   },
 };

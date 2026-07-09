@@ -1,8 +1,8 @@
 .alert { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.875rem 1rem; border-radius: 0.5rem; border-left: 4px solid; font-size: 0.9rem; }
-.info { background: #eff6ff; border-color: #3b82f6; color: #1d4ed8; }
-.success { background: #f0fdf4; border-color: #22c55e; color: #166534; }
-.warning { background: #fffbeb; border-color: #f59e0b; color: #92400e; }
-.danger { background: #fef2f2; border-color: #ef4444; color: #991b1b; }
+.info { background: var(--color-info-subtle); border-color: var(--color-info); color: #1d4ed8; }
+.success { background: var(--color-success-subtle); border-color: var(--color-success); color: #166534; }
+.warning { background: var(--color-warning-subtle); border-color: var(--color-warning); color: #92400e; }
+.danger { background: var(--color-danger-subtle); border-color: var(--color-danger); color: #991b1b; }
 .icon { font-size: 1rem; flex-shrink: 0; line-height: 1.4; }
 .content { flex: 1; }
 .title { margin: 0 0 0.25rem; font-weight: 600; }

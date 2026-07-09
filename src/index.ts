@@ -1,5 +1,9 @@
 // PrepUI — React 19 Dashboard Component Library
 
+// ── Theming ─────────────────────────────────────────────────────────────────
+export { ThemeProvider, useTheme } from './theme';
+export type { Theme, ThemeContextValue, ThemeProviderProps } from './theme';
+
 // ── Primitives ─────────────────────────────────────────────────────────────
 export { default as Button } from './components/Button';
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button';
@@ -12,6 +16,9 @@ export type { AvatarProps, AvatarSize, AvatarStatus } from './components/Avatar'
 
 export { default as Spinner } from './components/Spinner';
 export type { SpinnerProps, SpinnerSize, SpinnerVariant } from './components/Spinner';
+
+export { default as Skeleton } from './components/Skeleton';
+export type { SkeletonProps, SkeletonVariant } from './components/Skeleton';
 
 // ── Layout ──────────────────────────────────────────────────────────────────
 export { default as Card } from './components/Card';
@@ -30,6 +37,12 @@ export type { CheckboxProps } from './components/Checkbox';
 export { default as Switch } from './components/Switch';
 export type { SwitchProps } from './components/Switch';
 
+export { default as Textarea } from './components/Textarea';
+export type { TextareaProps, TextareaSize } from './components/Textarea';
+
+export { default as RadioGroup } from './components/RadioGroup';
+export type { RadioGroupProps, RadioOption } from './components/RadioGroup';
+
 // ── Feedback ────────────────────────────────────────────────────────────────
 export { default as Alert } from './components/Alert';
 export type { AlertProps, AlertVariant } from './components/Alert';
@@ -37,12 +50,21 @@ export type { AlertProps, AlertVariant } from './components/Alert';
 export { default as Progress } from './components/Progress';
 export type { ProgressProps, ProgressVariant, ProgressSize } from './components/Progress';
 
+export { ToastProvider, useToast } from './components/Toast';
+export type { ToastOptions, ToastVariant, ToastPosition, ToastProviderProps } from './components/Toast';
+
+export { default as EmptyState } from './components/EmptyState';
+export type { EmptyStateProps, EmptyStateSize } from './components/EmptyState';
+
 // ── Navigation ──────────────────────────────────────────────────────────────
 export { default as Tabs } from './components/Tabs';
 export type { TabsProps, TabItem } from './components/Tabs';
 
 export { default as Breadcrumb } from './components/Breadcrumb';
 export type { BreadcrumbProps, BreadcrumbItem } from './components/Breadcrumb';
+
+export { default as Pagination } from './components/Pagination';
+export type { PaginationProps, PaginationSize } from './components/Pagination';
 
 // ── Overlay ──────────────────────────────────────────────────────────────────
 export { default as Modal } from './components/Modal';

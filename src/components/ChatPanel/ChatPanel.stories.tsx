@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import ChatPanel from './ChatPanel';
 import type { ChatMessage } from './ChatPanel';
 

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import StatCard from './StatCard';
 
 const meta = { title: 'Dashboard/StatCard', component: StatCard, parameters: { layout: 'centered' }, tags: ['autodocs'] } satisfies Meta<typeof StatCard>;

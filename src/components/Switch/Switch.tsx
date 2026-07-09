@@ -8,7 +8,8 @@ export interface SwitchProps extends Omit<React.InputHTMLAttributes<HTMLInputEle
 }
 
 export default function Switch({ label, description, size = 'md', className, id, ...props }: SwitchProps) {
-  const switchId = id ?? Math.random().toString(36).slice(2);
+  const autoId = React.useId();
+  const switchId = id ?? autoId;
   return (
     <div className={[styles.wrapper, className ?? ''].filter(Boolean).join(' ')}>
       <label htmlFor={switchId} className={styles.row}>

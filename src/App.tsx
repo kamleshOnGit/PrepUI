@@ -29,6 +29,13 @@ import ResultsComparison from './components/ResultsComparison';
 import FeedbackWidget from './components/FeedbackWidget';
 import type { ChatMessage } from './components/ChatPanel';
 import type { FeedbackValue } from './components/FeedbackWidget';
+import Skeleton from './components/Skeleton';
+import Pagination from './components/Pagination';
+import Textarea from './components/Textarea';
+import RadioGroup from './components/RadioGroup';
+import EmptyState from './components/EmptyState';
+import { useToast } from './components/Toast';
+import { useTheme } from './theme';
 
 const SAMPLE_MESSAGES: ChatMessage[] = [
   { id: 1, role: 'user', content: 'What is React?', timestamp: new Date('2024-01-15T10:00:00') },
@@ -66,6 +73,12 @@ export default function App() {
   // FeedbackWidget state
   const [feedbackVal, setFeedbackVal] = React.useState<FeedbackValue>(null);
 
+  // New component demos
+  const { theme, toggleTheme } = useTheme();
+  const { toast } = useToast();
+  const [demoPage, setDemoPage] = React.useState(1);
+  const [plan, setPlan] = React.useState('pro');
+
   const handlePromptSubmit = (value: string) => {
     const userMsg: ChatMessage = { id: Date.now(), role: 'user', content: value, timestamp: new Date() };
     setMessages((prev) => [...prev, userMsg]);
@@ -100,15 +113,15 @@ export default function App() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f8fafc', fontFamily: 'var(--font-family)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--color-bg)', fontFamily: 'var(--font-family)' }}>
 
       {/* ── Top nav ──────────────────────────────────────────────────────── */}
-      <div style={{ background: '#fff', borderBottom: '1px solid #e2e8f0', padding: '0 2rem', position: 'sticky', top: 0, zIndex: 10 }}>
+      <div style={{ background: 'var(--color-surface)', borderBottom: '1px solid var(--color-border)', padding: '0 2rem', position: 'sticky', top: 0, zIndex: 10 }}>
         <div style={{ maxWidth: 960, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 56 }}>
-          <h1 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 800, color: '#1e293b' }}>
+          <h1 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 800, color: 'var(--color-text)' }}>
             <span style={{ color: '#6366f1' }}>Prep</span>UI
           </h1>
-          <div style={{ display: 'flex', gap: 4, background: '#f1f5f9', borderRadius: 8, padding: 4 }}>
+          <div style={{ display: 'flex', gap: 4, background: 'var(--color-surface-sunken)', borderRadius: 8, padding: 4 }}>
             {(['dashboard', 'ai'] as const).map((s) => (
               <button
                 key={s}
@@ -116,8 +129,8 @@ export default function App() {
                 style={{
                   padding: '5px 16px', borderRadius: 6, border: 'none', cursor: 'pointer',
                   fontWeight: 500, fontSize: 13, transition: 'all 0.15s',
-                  background: section === s ? '#fff' : 'transparent',
-                  color: section === s ? '#1e293b' : '#64748b',
+                  background: section === s ? 'var(--color-surface)' : 'transparent',
+                  color: section === s ? 'var(--color-text)' : 'var(--color-text-muted)',
                   boxShadow: section === s ? '0 1px 3px rgba(0,0,0,0.08)' : 'none',
                 }}
               >
@@ -125,9 +138,14 @@ export default function App() {
               </button>
             ))}
           </div>
-          <span style={{ fontSize: 12, color: '#94a3b8' }}>
-            run <code style={{ background: '#f1f5f9', padding: '1px 5px', borderRadius: 3 }}>npm run storybook</code> for full docs
-          </span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <span style={{ fontSize: 12, color: 'var(--color-text-subtle)' }}>
+              run <code style={{ background: 'var(--color-surface-sunken)', padding: '1px 5px', borderRadius: 3 }}>npm run storybook</code> for full docs
+            </span>
+            <Button variant="outline" size="sm" onClick={toggleTheme} aria-label="Toggle theme">
+              {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+            </Button>
+          </div>
         </div>
       </div>
 
@@ -143,6 +161,35 @@ export default function App() {
               <StatCard title="Orders" value="1,204" trend="down" trendValue="3.2%" subtitle="vs yesterday" icon="📦" />
               <StatCard title="Bounce Rate" value="42.3%" trend="neutral" trendValue="0%" subtitle="No change" icon="📊" />
             </div>
+
+            {/* New components */}
+            <Card style={{ marginBottom: '1.5rem' }}>
+              <Card.Header>New: Skeleton, Pagination, Toast, Textarea, RadioGroup, EmptyState</Card.Header>
+              <Card.Body>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                    <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                      <Skeleton variant="circular" width={40} height={40} />
+                      <div style={{ flex: 1 }}><Skeleton lines={3} /></div>
+                    </div>
+                    <Pagination page={demoPage} pageCount={12} onPageChange={setDemoPage} size="sm" />
+                    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                      <Button size="sm" variant="secondary" onClick={() => toast({ title: 'Saved!', description: 'Your changes were saved.', variant: 'success' })}>Success toast</Button>
+                      <Button size="sm" variant="secondary" onClick={() => toast({ title: 'Something failed', description: 'Please try again.', variant: 'danger' })}>Error toast</Button>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                    <Textarea label="Feedback" placeholder="Tell us what you think…" maxLength={200} showCount fullWidth rows={2} />
+                    <RadioGroup label="Plan" direction="horizontal" value={plan} onChange={setPlan} options={[
+                      { value: 'free', label: 'Free' },
+                      { value: 'pro', label: 'Pro' },
+                      { value: 'team', label: 'Team' },
+                    ]} />
+                  </div>
+                  <EmptyState size="sm" icon="🔍" title="No results found" description="Try adjusting your filters." action={<Button size="sm">Clear filters</Button>} />
+                </div>
+              </Card.Body>
+            </Card>
 
             {/* Buttons */}
             <Card style={{ marginBottom: '1.5rem' }}>
@@ -413,6 +460,8 @@ export default function App() {
                   hoverable
                   striped
                   stickyHeader
+                  selectable
+                  pageSize={4}
                   columns={[
                     { key: 'name', header: 'Name', accessor: (r) => r.name, sortable: true },
                     { key: 'role', header: 'Role', accessor: (r) => <Badge variant={r.role === 'Admin' ? 'danger' : r.role === 'Editor' ? 'warning' : 'info'}>{r.role}</Badge>, width: '110px' },

@@ -1,4 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { expect, userEvent, within } from 'storybook/test';
 import Tabs from './Tabs';
 
 const meta = { title: 'Components/Tabs', component: Tabs, parameters: { layout: 'padded' }, tags: ['autodocs'] } satisfies Meta<typeof Tabs>;
@@ -15,3 +16,15 @@ const items = [
 export const Underline: Story = { args: { items, variant: 'underline', defaultActiveKey: 'overview' } };
 export const Pills: Story = { args: { items, variant: 'pills', defaultActiveKey: 'analytics' } };
 export const Boxed: Story = { args: { items, variant: 'boxed', defaultActiveKey: 'settings' } };
+
+export const SwitchingTabs: Story = {
+  args: { items, variant: 'underline', defaultActiveKey: 'overview' },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await expect(canvas.getByText('Overview content here.')).toBeInTheDocument();
+    await userEvent.click(canvas.getByRole('tab', { name: /Analytics/ }));
+    await expect(canvas.getByText('Analytics content here.')).toBeInTheDocument();
+    await expect(canvas.queryByText('Overview content here.')).not.toBeInTheDocument();
+    await expect(canvas.getByRole('tab', { name: /Disabled/ })).toBeDisabled();
+  },
+};

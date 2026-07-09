@@ -5,7 +5,7 @@
   height: 100%;
   min-height: 320px;
   overflow-y: auto;
-  background: #f8fafc;
+  background: var(--color-bg);
   border-radius: 0.75rem;
   padding: 1rem 0.75rem;
 }
@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  color: #94a3b8;
+  color: var(--color-text-subtle);
   text-align: center;
   padding: 3rem 1rem;
 }
@@ -58,7 +58,7 @@
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, var(--color-primary), #8b5cf6);
   color: #fff;
   display: flex;
   align-items: center;
@@ -69,8 +69,8 @@
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background: #e2e8f0;
-  color: #475569;
+  background: var(--color-surface-sunken);
+  color: var(--color-text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,7 +90,7 @@
 .roleName {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #64748b;
+  color: var(--color-text-muted);
   padding: 0 0.25rem;
 }
 
@@ -105,19 +105,19 @@
   position: relative;
 }
 .contentUser {
-  background: #6366f1;
+  background: var(--color-primary);
   color: #fff;
   border-bottom-right-radius: 0.25rem;
 }
 .contentAssistant {
-  background: #fff;
-  color: #1e293b;
+  background: var(--color-surface);
+  color: var(--color-text);
   border-bottom-left-radius: 0.25rem;
   box-shadow: 0 1px 3px rgba(0,0,0,0.07);
-  border: 1px solid #f1f5f9;
+  border: 1px solid var(--color-surface-sunken);
 }
 .contentSystem {
-  background: #fef9c3;
+  background: var(--color-warning-subtle);
   color: #92400e;
   border-radius: 0.5rem;
   font-size: 0.8125rem;
@@ -142,7 +142,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #94a3b8;
+  background: var(--color-text-subtle);
   margin: 0 2px;
   animation: bounce 1.2s infinite;
 }
@@ -165,6 +165,6 @@
 
 .time {
   font-size: 0.7rem;
-  color: #94a3b8;
+  color: var(--color-text-subtle);
 }
 .actions { display: flex; gap: 0.25rem; }

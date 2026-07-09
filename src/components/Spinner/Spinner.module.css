@@ -5,6 +5,6 @@
 .md { width: 1.75rem; height: 1.75rem; border-width: 3px; }
 .lg { width: 2.5rem; height: 2.5rem; border-width: 3px; }
 .xl { width: 3.5rem; height: 3.5rem; border-width: 4px; }
-.primary { border-color: #6366f1; }
+.primary { border-color: var(--color-primary); }
 .white { border-color: #fff; }
-.muted { border-color: #94a3b8; }
+.muted { border-color: var(--color-text-subtle); }

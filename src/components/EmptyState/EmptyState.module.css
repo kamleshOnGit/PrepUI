@@ -1,0 +1,17 @@
+.wrapper { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.icon { display: inline-flex; align-items: center; justify-content: center; color: var(--color-text-subtle); background: var(--color-surface-sunken); border-radius: var(--radius-full); }
+.title { color: var(--color-text); font-weight: 600; margin: 0; }
+.description { color: var(--color-text-muted); margin: 0; max-width: 28rem; }
+.action { display: flex; align-items: center; gap: var(--space-2); }
+.sm { padding: var(--space-4); gap: var(--space-2); }
+.sm .icon { width: 2.5rem; height: 2.5rem; font-size: var(--font-size-lg); }
+.sm .title { font-size: var(--font-size-md); }
+.sm .description { font-size: var(--font-size-xs); }
+.md { padding: var(--space-6); gap: var(--space-3); }
+.md .icon { width: 3.5rem; height: 3.5rem; font-size: var(--font-size-xl); }
+.md .title { font-size: var(--font-size-lg); }
+.md .description { font-size: var(--font-size-sm); }
+.lg { padding: var(--space-8); gap: var(--space-4); }
+.lg .icon { width: 4.5rem; height: 4.5rem; font-size: var(--font-size-2xl); }
+.lg .title { font-size: var(--font-size-xl); }
+.lg .description { font-size: var(--font-size-md); }

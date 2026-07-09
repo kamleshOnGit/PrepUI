@@ -2,6 +2,27 @@ import type { Preview } from '@storybook/react-vite';
 import '../src/styles/tokens.css';
 
 const preview: Preview = {
+  globalTypes: {
+    theme: {
+      description: 'Color theme',
+      toolbar: {
+        title: 'Theme',
+        icon: 'mirror',
+        items: [
+          { value: 'light', title: 'Light' },
+          { value: 'dark', title: 'Dark' },
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
+  initialGlobals: { theme: 'light' },
+  decorators: [
+    (Story, context) => {
+      document.documentElement.setAttribute('data-theme', context.globals.theme ?? 'light');
+      return Story();
+    },
+  ],
   parameters: {
     controls: {
       matchers: {

@@ -1,8 +1,8 @@
-.navbar { background: #fff; height: 3.5rem; z-index: 100; }
+.navbar { background: var(--color-surface); height: 3.5rem; z-index: 100; }
 .sticky { position: sticky; top: 0; }
-.bordered { border-bottom: 1px solid #e2e8f0; }
+.bordered { border-bottom: 1px solid var(--color-border); }
 .inner { display: flex; align-items: center; justify-content: space-between; height: 100%; padding: 0 1.5rem; gap: 1rem; }
 .left { display: flex; align-items: center; gap: 1rem; }
-.logo { font-weight: 700; font-size: 1.1rem; color: #1e293b; white-space: nowrap; }
+.logo { font-weight: 700; font-size: 1.1rem; color: var(--color-text); white-space: nowrap; }
 .leftContent { display: flex; align-items: center; gap: 0.5rem; }
 .right { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }

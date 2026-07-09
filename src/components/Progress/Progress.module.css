@@ -1,17 +1,17 @@
 .wrapper { display: flex; flex-direction: column; gap: 0.35rem; width: 100%; }
 .labelRow { display: flex; justify-content: space-between; align-items: center; }
-.label { font-size: 0.8rem; font-weight: 500; color: #475569; }
-.value { font-size: 0.8rem; color: #475569; }
-.track { width: 100%; background: #e2e8f0; border-radius: 9999px; overflow: hidden; }
+.label { font-size: 0.8rem; font-weight: 500; color: var(--color-text-muted); }
+.value { font-size: 0.8rem; color: var(--color-text-muted); }
+.track { width: 100%; background: var(--color-surface-sunken); border-radius: 9999px; overflow: hidden; }
 .xs { height: 0.25rem; }
 .sm { height: 0.5rem; }
 .md { height: 0.75rem; }
 .lg { height: 1rem; }
 .bar { height: 100%; border-radius: 9999px; transition: width 0.4s ease; }
-.primary { background: #6366f1; }
-.success { background: #22c55e; }
-.warning { background: #f59e0b; }
-.danger { background: #ef4444; }
+.primary { background: var(--color-primary); }
+.success { background: var(--color-success); }
+.warning { background: var(--color-warning); }
+.danger { background: var(--color-danger); }
 .striped { background-image: linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent); background-size: 1rem 1rem; }
 .animated { animation: progress-stripes 0.75s linear infinite; }
 @keyframes progress-stripes { from { background-position: 1rem 0; } to { background-position: 0 0; } }

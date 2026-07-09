@@ -9,7 +9,8 @@ export interface CheckboxProps extends Omit<React.InputHTMLAttributes<HTMLInputE
 }
 
 export default function Checkbox({ label, description, error, indeterminate = false, className, id, ...props }: CheckboxProps) {
-  const checkId = id ?? Math.random().toString(36).slice(2);
+  const autoId = React.useId();
+  const checkId = id ?? autoId;
   const ref = React.useRef<HTMLInputElement>(null);
   React.useEffect(() => { if (ref.current) ref.current.indeterminate = indeterminate; }, [indeterminate]);
   return (

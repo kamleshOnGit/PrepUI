@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import Progress from './Progress';
 
 const meta = { title: 'Components/Progress', component: Progress, parameters: { layout: 'padded' }, tags: ['autodocs'] } satisfies Meta<typeof Progress>;
