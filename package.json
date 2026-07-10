@@ -1,13 +1,19 @@
 {
-  "name": "@prepui/components",
+  "name": "@kamleshdev/prepui",
   "version": "0.1.0",
-  "description": "A React 19 UI component library for building dashboards",
+  "description": "A React 19 UI component library for building dashboards — 30+ accessible components, dark mode, AI building blocks.",
   "keywords": [
     "react",
+    "react19",
     "ui",
     "components",
+    "component-library",
     "dashboard",
-    "design-system"
+    "design-system",
+    "dark-mode",
+    "ai",
+    "typescript",
+    "css-modules"
   ],
   "author": "",
   "license": "MIT",
@@ -15,6 +21,9 @@
   "main": "./dist/prepui.cjs",
   "module": "./dist/prepui.mjs",
   "types": "./dist/index.d.ts",
+  "sideEffects": [
+    "*.css"
+  ],
   "exports": {
     ".": {
       "import": "./dist/prepui.mjs",
@@ -24,17 +33,24 @@
     "./style.css": "./dist/style.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -p tsconfig.lib.json && vite build",
+    "build": "vite build && tsc -p tsconfig.lib.json",
     "build:types": "tsc -p tsconfig.lib.json",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build -o storybook-static",
-    "test": "vitest --project=storybook"
+    "test": "vitest --project=storybook",
+    "prepublishOnly": "npm run build",
+    "prepack": "npm run build"
   },
   "peerDependencies": {
     "react": "^19.0.0",
