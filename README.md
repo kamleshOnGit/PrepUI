@@ -1,6 +1,12 @@
 # PrepUI
 
+[![npm version](https://img.shields.io/npm/v/@kamleshdev/prepui.svg)](https://www.npmjs.com/package/@kamleshdev/prepui)
+[![npm downloads](https://img.shields.io/npm/dm/@kamleshdev/prepui.svg)](https://www.npmjs.com/package/@kamleshdev/prepui)
+[![license](https://img.shields.io/npm/l/@kamleshdev/prepui.svg)](https://www.npmjs.com/package/@kamleshdev/prepui)
+
 A React 19 UI component library for building dashboards. 30+ accessible components, dark mode theming, and AI building blocks. Built with TypeScript and CSS Modules — zero runtime CSS-in-JS.
+
+**npm:** https://www.npmjs.com/package/@kamleshdev/prepui
 
 ## Features
 
